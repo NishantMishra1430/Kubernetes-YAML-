@@ -1,3 +1,9 @@
+# What is Deployment ?
+# Deployment is a Kubernetes Controller used to manage pods with, Auto heal, scale, and for rolling updates (Zero Downtime Deployments).
+  # in Deployment YAML we declare the desired state and kubernetes have to 
+  # make sure that the cluster always maintain that automatically. 
+
+
                                   # Intialization 
 kind: Deployment
 apiVersion: apps/v1
