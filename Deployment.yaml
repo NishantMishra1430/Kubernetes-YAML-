@@ -1,29 +1,31 @@
-# Intialization 
+                                  # Intialization 
 kind: Deployment
 apiVersion: apps/v1
 
-# Metadata (About Deploymnet)
+                                  # Metadata (About Deploymnet)
 metadata:
   name: try-deployment
   labels:
     app: nginx
 
-# specs of the Replicas and container
-spec: # Of Replicas 
+                                  # Creation Flow --> Specs of replicas --> template of pods --> Containers 
+
+
+spec:                             # Of Replicas 
   replicas: 2
   selector:
     matchLabels:
       app: nginx
-  template:
-    metadata:
-      labels:
+  template:                       # Of pods 
+    metadata:                     # About Pods (The only thing pods need is Labeled containers)
+      labels:                     # We only need these labeled container in our pods
         app: nginx
-    spec: # Of Conatiner
+    spec:                         # Of Conatiner
      containers: 
       - name: nginx
         image: nginx:1.14.2
         ports:
         - containerPort: 80
 
-# RUN COMMAND: kubectl apply -f Deployment.yaml
+                                  # RUN COMMAND: kubectl apply -f Deployment.yaml
 
